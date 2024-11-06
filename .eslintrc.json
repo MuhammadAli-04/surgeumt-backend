@@ -1,0 +1,78 @@
+{
+  "env": {
+    "node": true,
+    "es6": true,
+    "es2021": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:prettier/recommended",
+    "plugin:import/errors",
+    "plugin:import/warnings",
+    "plugin:import/recommended"
+  ],
+  "overrides": [],
+  "plugins": ["import"],
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  },
+  "rules": {
+    "prettier/prettier": [
+      "error",
+      {
+        "trailingComma": "es5",
+        "tabWidth": 2,
+        "semi": false,
+        "singleQuote": true,
+        "useTabs": false,
+        "bracketSpacing": true,
+        "jsxBracketSameLine": false,
+        "arrowParens": "always",
+        "proseWrap": "preserve",
+        "htmlWhitespaceSensitivity": "css",
+        "jsxSingleQuote": false,
+        "quoteProps": "as-needed",
+        "printWidth": 80
+      }
+    ],
+    "no-console": "error",
+    "no-unused-vars": "warn",
+    "eqeqeq": ["error", "always"],
+    "curly": "error",
+    "brace-style": ["error", "1tbs"],
+    "comma-dangle": ["error", "only-multiline"],
+    "no-trailing-spaces": "error",
+    "eol-last": ["error", "always"],
+    "camelcase": ["error", { "properties": "always" }],
+    "arrow-spacing": ["error", { "before": true, "after": true }],
+    "no-var": "error",
+    "prefer-const": "error",
+    "prefer-arrow-callback": "error",
+    "import/order": [
+      "error",
+      {
+        "alphabetize": {
+          "caseInsensitive": true,
+          "order": "asc"
+        },
+        "groups": [
+          "builtin",
+          "external",
+          "index",
+          "sibling",
+          "parent",
+          "internal"
+        ]
+      }
+    ]
+  },
+  "ignorePatterns": ["dist/", "node_modules/"],
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "paths": ["src"]
+      }
+    }
+  }
+}
